@@ -1,0 +1,30 @@
+#========================================
+# server configuration
+#========================================
+server:
+  port: 9889
+
+
+      
+#=============================================
+#  oracle Database configuration 
+#=============================================
+
+spring:
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: scott
+    password: tiger
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle10gDialect
+    show-sql: true
+  
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
